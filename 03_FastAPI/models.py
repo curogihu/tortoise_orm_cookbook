@@ -26,7 +26,10 @@ class Users(models.Model):
         return self.username
 
     class PydanticMeta:
+        # computedに値を返す関数を設定することで、項目のように使える
         computed = ["full_name"]
+
+        # パスワードが変更されないように、password_hashは参照のみ
         exclude = ["password_hash"]
 
 

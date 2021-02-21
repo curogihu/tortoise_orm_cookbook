@@ -47,7 +47,7 @@ async def delete_user(user_id: int):
         raise HTTPException(status_code=404, detail=f"User {user_id} not found")
     return Status(message=f"Deleted user {user_id}")
 
-
+# FastAPIとTortoiseを併用する
 register_tortoise(
     app,
     db_url="sqlite://:memory:",
